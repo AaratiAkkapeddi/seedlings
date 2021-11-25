@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Document</title>
+</head>
+<body>
+	<a id="back-button" href="/index.html">back to intro</a>
+    <div class="garden">
+    	<div class="intro">
+			select an image to leave a comment:
+		</div>
+    </div>
+    <script src="seeds.js"></script>
+    <script>
+
+    	for (var i = seeds.length - 1; i >= 0; i--) {
+
+    		let imgurl = "assets/" + seeds[i];
+    		let img = document.createElement("img")
+    		let a = document.createElement("a")
+    		a.href = "/seed.html?seed="+ seeds[i];
+    		img.id = "img-"+ seeds[i]
+    		img.src = imgurl
+    		a.appendChild(img)
+    		document.querySelector(".garden").appendChild(a)
+    	}
+
+    </script>
+
+</body>
+</html>
