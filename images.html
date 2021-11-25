@@ -7,7 +7,7 @@
 	<title>Document</title>
 </head>
 <body>
-	<a id="back-button" href="/index.html">back to intro</a>
+	<a id="back-button" href="index.html">back to intro</a>
     <div class="garden">
     	<div class="intro">
 			select an image to leave a comment:
@@ -21,7 +21,7 @@
     		let imgurl = "assets/" + seeds[i];
     		let img = document.createElement("img")
     		let a = document.createElement("a")
-    		a.href = "/seed.html?seed="+ seeds[i];
+    		a.href = "seed.html?seed="+ seeds[i];
     		img.id = "img-"+ seeds[i]
     		img.src = imgurl
     		a.appendChild(img)
