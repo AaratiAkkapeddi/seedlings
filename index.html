@@ -13,10 +13,54 @@
 	<a id="back-button" href="images.html">skip to all images</a>
 	    <div class="reveal">
 				<div class="slides">
-					<section>Welcome</section>
-					<section>Slide 2</section>
-					<section><a href="images.html">see all images →</a></section>
+					<section>
+						<p>Dear Reader,
+							<blockquote>I created this website to collect comments, reactions, & reflections on a current project of mine which uses a machine learning model trained on family photographs. Before I show you this in-progress work, I wanted to use this space to give you some context. If you've already read this page, please feel free to skip ahead using the "skip to all images" button in the top left. Otherwise, I ask that you please read this intro presentation first. Scroll, or click the arrow in the lower right to advance these slides.</blockquote>
+						</p>
+				    </section>
+					<section>
+						<p>Over the past three years, I've scanned and compiled an archive of family photos from both sides of my family. I did this not only for the purpose of this project, but also to preserve family history. (If you'd like access to this archive, or have something that you'd like me to digitize - please reach out at aarati.akkapeddi@gmail.com.) I've compiled over 1,000 images and a few videos as well from VHS tapes.</p>
+						<div class="slide-img"><img src="1.gif"/></div>
+					</section>
+					<section>
+						<p>At the same time, I have been working as an artist with machine learning technology (currently in residence at NYU). Specifically, I have been working with a type of machine learning called "Generative Adversarial Networks" or GAN for short. When you provide a GAN with images, it will 'look' at these images and attempt to create it's own approximations of what you've shown it. The process of 'showing' the GAN your own images is called "training." As an example, below you can see a GAN that has been trained on pictures of dogs from <a href="http://vision.stanford.edu/aditya86/ImageNetDogs/">Stanford's dog breed dataset</a>.</p>
+						<div class="slide-img"><img src="dogs.png"/><span class="caption">fake dogs generated from a GAN</span></div>
+						<div class="slide-img">
+						<img src="dog.png"/><span class="caption">real dogs</span></div>
+					</section>
+					<section>
+						<p>What I find compelling about GANs as an artist is the idea of approximation. I'm just as interested in the differences between the generated images and the originals as I am the similarities. For me, this feels metaphorically rich for thinking about our own memory. Our memories are on one hand our way of documenting lived experience, but they also are subjective and change over time. In that way, our memories are generative too -- they aren't simply documentations of our experiences. </p>
+		
+					</section>
+					<section>
+						<p> I have been training my own GAN on my family archive as a way to explore this idea of approximation. Specifically, I've trained my GAN on faces from my family archive. I did not thoroughly edit my dataset to exclude non-blood relatives or family friends. So it's not quite a dataset of relatives. It's moreso a dataset of familiar and loved faces! This dataset has been kept private. I will not share this dataset publicly because I want to protect the privacy of the people in the images. I have however, been producing artworks with the <em>generated images</em>.</p>
+					</section>
+					<section>
+						<p> In the generated images, I'm interested in finding a balance between familiarity and unfamiliarity. It's not a goal for me to have these generated images look <em>very close</em> to the originals. In fact, many of the generated images seem more like paintings than photographs. The angles may be off, the ears may be too big, and the colors might be fantastical. But I find these irregularities charming. I enjoy the surprises the GAN creates.
+						</p>
+						<div class="slide-img"><img src="dogs.png"/><span class="caption">generated image</span></div>
+					</section>
+					<section>
+						<p> That being said, I <em>am</em> interested in having bits and pieces recognized. As an example, below you can see a generated image that, to me at least, looks a little bit like my maternal grandfather but also a little like my paternal grandfather. Ultimately, I don't recognize this person, but I still feel familiarity in those small similarities. 
+						</p>
+						<div class="slide-img"><img src="dogs.png"/><span class="caption">generated image</span></div>
+					</section>
+					<section>
+						<p> And this is where you come in: I want to hear from you what or who feels familiar from these generated images. It could be a relative's eyes, someone's glasses, or it might appear to be from a specific time period or type of event (a marriage for example). I am most familiar with my parents and immediate family, so that is who I mostly see in the generated images. But I want to know from you if you see anyone else -- even if it is just in small details. 
+						</p>
+						<div class="slide-img"><img src="dogs.png"/><span class="caption">generated image</span></div>
+					</section>
+					<section>
+						<p> On the next page you will find a link to see all the generated images. When you arrive at that link, you can select an image to leave a comment. This comment can be attached to your name or anonymous. It's up to you. If you have any questions please don't hesitate to reach out to me at aarati.akkapeddi@gmail.com.
+						</p>
+						<div class="slide-img"><img src="dogs.png"/><span class="caption">generated image</span></div>
+					</section>
+					<section><p>Thank you for reading. <br><a href="images.html">see all images →</a></p></section>
 				</div>
+		</div>
+		<div id="lightbox">
+			<div class="close">X</div>
+			<img src="">
 		</div>
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
@@ -34,6 +78,20 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
+
+
+			let imgs = document.querySelectorAll('img');
+			for (var i = imgs.length - 1; i >= 0; i--) {
+				imgs[i].addEventListener("click",function(){
+					let src = this.src;
+					document.querySelector("#lightbox img").src = src;
+
+					document.querySelector("#lightbox").classList.add("on")
+				})
+			}
+			document.querySelector("#lightbox").addEventListener("click", function(){
+				document.querySelector("#lightbox").classList.remove("on")
+			})
 		</script>
 
 </body>

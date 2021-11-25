@@ -17,7 +17,7 @@
 	  <input name="name" type="text">
 	  <span>Your comment:</span>
 	  <textarea name="note" type="text" placeholder="note" required> </textarea>
-	  <button type="submit">submit</button>
+	  <button id='submit' type="submit">submit</button>
 	</form>
 	</div>
 	<script>
@@ -43,7 +43,7 @@
         formData.append('seed', seed);
 
 	    fetch(scriptURL, { method: 'POST', body: formData })
-	      .then(response => console.log('Success!', response))
+	      .then(response => document.getElementById("submit").classList.add("off"))
 	      .catch(error => console.error('Error!', error.message))
 	  })
 	</script>
