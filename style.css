@@ -194,6 +194,9 @@ form button.off::after{
 		height:auto;
 		width:100%;
 	}
+	.garden{
+		margin-top:50px;
+	}
 	#lightbox img{
 		height: auto;
 		width:70vw;
