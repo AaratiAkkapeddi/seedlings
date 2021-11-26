@@ -190,6 +190,10 @@ form button.off::after{
 		width: 30%;
 		margin:5px;
 	}
+	.garden a img{
+		height:auto;
+		width:100%;
+	}
 	#lightbox img{
 		height: auto;
 		width:70vw;
