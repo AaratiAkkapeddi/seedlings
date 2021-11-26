@@ -37,6 +37,7 @@
 	  const form = document.forms['submit-to-google-sheet']
       
 	  form.addEventListener('submit', e => {
+	  	document.getElementById("submit").classList.add("pending")
 	  	let seed = window.location.href;
 	  	seed = seed.split("seed=")[1]
 	    e.preventDefault()

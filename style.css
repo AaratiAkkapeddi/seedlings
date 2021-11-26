@@ -2,6 +2,10 @@
 	width: 12%;
 	margin:5px;
 	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	justify-items:center;
 }
 .intro{
 	padding:25px;
@@ -155,8 +159,18 @@ form button.off{
 	opacity: 0.5;
 	font-size:0;
 }
-form button.off::after{
+form button.off::after, form button.pending.off::after{
 	content:"Entry submitted. Refresh page to submit another entry";
+	display: block;
+	font-size:24px;
+}
+form button.pending{
+	pointer-events: none;
+	opacity: 0.5;
+	font-size:0;
+}
+form button.pending::after{
+	content:"Entry submitting please wait...";
 	display: block;
 	font-size:24px;
 }
