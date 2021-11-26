@@ -202,14 +202,17 @@ form button.off::after{
 		width: 25px;
 	}
 	.slides{
-		height:1400px !important;
-		width: 900px !important;
+		height:1100px !important;
+	}
+	.slides p{
+		width: 90%;
+		margin: 0 auto;
 	}
 	.reveal p, .reveal blockquote{
-		font-size:48px;
+		font-size:40px;
 	}
 	.reveal .caption{
-		font-size:32px;
+		font-size:30px;
 	}
 	.slide-img{
 		width: 40%;
