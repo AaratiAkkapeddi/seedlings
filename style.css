@@ -58,6 +58,9 @@ a{
 .slide-img img{
 	width:100%;
 }
+.slide-img img:hover{
+	opacity: 0.8;
+}
 .garden a img{
 	width:100%;
 	margin:0;
